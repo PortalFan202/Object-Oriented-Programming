@@ -33,10 +33,9 @@ class Dungeon {
 
 class Room {
     //Needs to have an id an connections, should work similar to a database, with the connected rooms having the id of the current room too
-    constructor(name, description ,objectName){
+    constructor(name, description){
         this.name = name;
         this.description = description;
-        this.objectName = objectName;
         this.connections = new Array();
         this.creatures = new Array();
         this.finalRoom = false;
@@ -60,7 +59,7 @@ class Room {
     addCreature(creature){this.creatures.push(creature)}
     removeCreature(creature){
         let index = this.creatures.indexOf(creature);
-        this.connections.splice(index, 1);
+        this.creatures.splice(index, 1);
     }
 
     //Will return the creatures array
@@ -85,7 +84,6 @@ class Template {
         this.attackDamage = attackDamage;
         this.chanceOfHit = chanceOfHit;
         this.name = name;
-        this.currentRoom = 0;
         this.fallenState = false;
     }
 
@@ -131,31 +129,21 @@ class Enemy extends Template {
 let dungeonEntrance = new Room(
     "Dungeon Entrance",
     "The entrance to the dungeon",
-    "dungeonEntrance"
 )
 
 let hallway = new Room(
     "Hallway",
     "The hallway stretches trough the dungeon",
-    "hallway"
 )
 
 let chamber = new Room(
     "Chamber",
     "A vast dark room.",
-    "chamber"
 )
 
 let portal = new Room(
     "The Final Portal",
     "A huge portal that leads to places unknown",
-    "portal"
-)
-
-let sala = new Room(
-    "Sala",
-    "La sala de los mortales",
-    "sala"
 )
 
 let dungeon = new Dungeon;
@@ -192,12 +180,9 @@ chamber.makeOneWayConnection(portal)
 portal.makeOneWayConnection(chamber)
 portal.finalRoom = true
 
-
 dungeonEntrance.playerPresent = true
 hallway.addCreature(sewerRat)
 chamber.addCreature(giantDragon)
-
-
 
 //Dungeon construction stops here
 
@@ -261,8 +246,25 @@ async function gameLoop() {
         roomWithPlayer.checkCreaturesAndAttackTarget(mainPlayer)
         break;
       
-      case 'Attack':
+      case 'attack':
         //Should make the player attack the other creature in the room
+        roomWithPlayer = dungeon.roomWithPlayer()
+        let attackableCreatures = roomWithPlayer.creatures.map(function(creature) {
+            let object = { title: creature.name, value: creature }
+            return object
+        })
+        if (attackableCreatures.length > 0){
+            const creatureSelection = await prompts({
+                type: 'select',
+                name: 'selectedCreature',
+                message: 'Choose a creature to attack',
+                choices: attackableCreatures
+            })
+
+            mainPlayer.attackTarget(creatureSelection.selectedCreature)
+            if(creatureSelection.selectedCreature.fallenState == true) {roomWithPlayer.removeCreature(creatureSelection.selectedCreature)}
+
+        } else {console.log("No creatures to attack!")}
         break;
       
       case 'exit':
