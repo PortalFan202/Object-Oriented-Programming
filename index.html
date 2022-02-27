@@ -20,10 +20,7 @@
     </footer>
 
     <script>
-        var jsonFile;
-        
-        $.getJSON("./products.json", function(json) {
-            jsonFile = json;
+        $.getJSON("./products.json", function(jsonFile) {
 
             jsonFile.forEach(element => {
                 var newBox = document.createElement("div");
@@ -40,5 +37,5 @@
                 newName.innerText = jsonFile[index].name;
                 element.appendChild(newName)
             });
-        });   
+        });
     </script>
