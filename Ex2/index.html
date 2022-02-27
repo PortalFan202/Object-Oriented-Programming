@@ -13,27 +13,20 @@
         <span>Dark Souls Shop</span>
     </header>
     <div id="main">
-        <div id="grid">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-        </div>
+        <div id="grid"></div>
     </div>
     <footer>
         <span>Product images, names and descriptions courtesy of <a href="https://darksouls.fandom.com/wiki/Dark_Souls_Wiki">Dark Souls 3 Wiki</a> <span>
     </footer>
 
     <script>
-        var jsonFile;
-        
-        $.getJSON("./products.json", function(json) {
-            jsonFile = json;
+        $.getJSON("./products.json", function(jsonFile) {
+
+            jsonFile.forEach(element => {
+                var newBox = document.createElement("div");
+                newBox.className = "box";
+                document.querySelector("#grid").appendChild(newBox)
+            });
             
             document.querySelectorAll(".box").forEach((element, index) => {
                 var newImg = document.createElement("img");
@@ -44,5 +37,5 @@
                 newName.innerText = jsonFile[index].name;
                 element.appendChild(newName)
             });
-        });   
+        });
     </script>

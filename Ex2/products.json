@@ -61,5 +61,26 @@
       "price": 20000,
       "id": 8,
       "image": "./images/tower_key.png"
+    },
+    {
+        "name": "Soul Arrow",
+        "description": "Elementary sorcery.\nFires a soul arrow.\nTo use sorceries, equip a staff and attune a sorcery at a bonfire.",
+        "price": 2000,
+        "id": 9,
+        "image": "./images/soul_arrow.png"
+    },
+    {
+      "name": "Farron Dart",
+      "description": "Variation of Soul Arrow developed by sorcerers of the Undead Legion of Farron.\nFire a soul dart.\nWell known among the Farron sorceries, it is learned far and wide due to its ease of use.",
+      "price": 1000,
+      "id": 10,
+      "image": "./images/farron_dart.png"
+    },
+    {
+        "name": "Heal Aid",
+        "description": "Miracle imparted as charity to those of little faith. A show of tolerance from the Way of White.\nSlightly restores HP.\nTo use miracles, equip a talisman or sacred chime and attune a miracle at a bonfire.",
+        "price": 500,
+        "id": 11,
+        "image": "./images/heal_aid.png"
     }
   ]
