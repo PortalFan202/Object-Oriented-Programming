@@ -1,0 +1,86 @@
+[
+    {
+      "name": "Ember",
+      "description": "No Unkindled can ever truly claim the embers that burn within a champion’s bosom, which is precisely what makes their yearning for warmth so keen.\nGain the strength of flame and increase max HP until death.\nWith the strength of fire, the summoning signs of Unkindled become visible, and seekers of embers can be summoned to join in co-operation. But beware the embers may also attract invaders.",
+      "price": 2000,
+      "id": 0,
+      "image": "./images/ember.png"
+    },
+    {
+      "name": "Repair Powder",
+      "description": "Lightly enchanted golden powder.\nRepairs equipped weapons and armor, as long as they haven't already broken.\nUse of a weapon depletes its durability, eventuallly causing it to break.\nAs long as a weapon is not broken, its durability can be restored at a bonfire, but for distant journeys, one may wish to prepare ahead.",
+      "price": 600,
+      "id": 1,
+      "image": "./images/repair_powder.png"
+    },
+    {
+      "name": "Purple Moss Clump",
+      "description": "Medicinal purple moss clump. Reduces poison build-up. Cures poison.\nPoison builds up in the body, and when it breaks out, it causes gradual damage over a period of time.\nPoison can be exasperating, so be sure to carry sufficient moss clumps when traveling to a blighted area.",
+      "price": 500,
+      "id": 2,
+      "image": "./images/purple_moss_clump.png"
+    },
+    {
+      "name": "Firebomb",
+      "description": "Bisque urn filled with black powder. Explodes, inflicting fire damage.\nFire damage, which differs from physical damage, is highly effective against creatures of flesh, beasts, and other foes that might naturally have cause to fear the flame.",
+      "price": 100,
+      "id": 3,
+      "image": "./images/firebomb.png"
+    },
+    {
+      "name": "Prism Stone",
+      "description": "Warm pebble emitting a beautiful phasing aura of seven colors, with a very rare eighth.\nThe prism stone does nothing special, but can serve as a path marker, or perhaps dropped off a cliff to judge height by the sound of its descent. If a loud noise is heard upon its landing, then a fall from the ledge is surely lethal.",
+      "price": 10,
+      "id": 4,
+      "image": "./images/prism_stone.png"
+    },
+    {
+      "name": "Homeward Bone",
+      "description": "Bone fragment reduced to white ash.\nReturn to last bonfire used for resting, or to the shrine bonfire.\nBonfires are sustained by bones of the Undead.\nIn rare cases, their previous owner's strong urge to seek bonfires enchant their bones with a homeward instinct.",
+      "price": 500,
+      "id": 5,
+      "image": "./images/homeward_bone.png"
+    },
+    {
+      "name": "White Sign Soapstone",
+      "description": "Online play item.\nCreate a co-op summon sign.\nBe summoned to another world as a phantom through your sign, and defeat the area boss to gain the strength of flame.\nThe nature of Lothric is murky, unclear.\nThe White Sign Soapstone allows Unkindled to assist one another.",
+      "price": 500,
+      "id": 6,
+      "image": "./images/white_sign_soapstone.png"
+    },
+    {
+      "name": "Dried Finger",
+      "description": "Online play item.\nDried finger with multiple knuckles.\nUse to strengthen connection to other worlds, allowing the summoning of a third phantom, but also a second dark spirit.\nAlso makes the summoning of a dark spirit occur earlier. Use with caution.",
+      "price": 2000,
+      "id": 7,
+      "image": "./images/dried_finger.png"
+    },
+    {
+      "name": "Tower Key",
+      "description": "Key to the decrepit tower behind Firelink Shrine which leads to the Bell Tower.\nThe Bell Tower is the grave of Fire Keepers past. When a Fire Keeper has served her purpose, she is led to true darkness, where she enjoys a long-deserved sleep.",
+      "price": 20000,
+      "id": 8,
+      "image": "./images/tower_key.png"
+    },
+    {
+        "name": "Soul Arrow",
+        "description": "Elementary sorcery.\nFires a soul arrow.\nTo use sorceries, equip a staff and attune a sorcery at a bonfire.",
+        "price": 2000,
+        "id": 9,
+        "image": "./images/soul_arrow.png"
+    },
+    {
+      "name": "Farron Dart",
+      "description": "Variation of Soul Arrow developed by sorcerers of the Undead Legion of Farron.\nFire a soul dart.\nWell known among the Farron sorceries, it is learned far and wide due to its ease of use.",
+      "price": 1000,
+      "id": 10,
+      "image": "./images/farron_dart.png"
+    },
+    {
+        "name": "Heal Aid",
+        "description": "Miracle imparted as charity to those of little faith. A show of tolerance from the Way of White.\nSlightly restores HP.\nTo use miracles, equip a talisman or sacred chime and attune a miracle at a bonfire.",
+        "price": 500,
+        "id": 11,
+        "image": "./images/heal_aid.png"
+    }
+  ]
