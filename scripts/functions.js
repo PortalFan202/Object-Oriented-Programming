@@ -15,13 +15,13 @@ function outsideClick(e) {
 function updateCart() {
     document.querySelector(".cartCounter").innerText = shoppingCartArray.length
     let cartItemsContainer = document.querySelector("#cartItemsContainer")
+    var totalPrice = 0
     if (shoppingCartArray.length == 0) {
         cartItemsContainer.innerText = "Shopping cart is empty!"
         cartItemsContainer.style["font-size"] = "5vh"
     } else {
         cartItemsContainer.innerHTML = ''
-        var totalPrice = 0
-        shoppingCartArray.forEach(element => {
+        shoppingCartArray.forEach((element, index) => {
             var newContainer = document.createElement("div")
                 newContainer.className = "itemContainer"
                     var img = document.createElement("img")
@@ -30,14 +30,23 @@ function updateCart() {
                     newName.innerText = element.name
                     var newPrice = document.createElement("span")
                     newPrice.innerText = element.price + " Souls"
+                    var newRemove = document.createElement("span")
+                        newRemove.innerText = 'X'
+                        newRemove.className = "removeItem"
+                        newRemove.onclick = function() {
+                            shoppingCartArray.splice(index, 1)
+                            updateCart()
+                        }
                     newContainer.appendChild(img)
                     newContainer.appendChild(newName)
                     newContainer.appendChild(newPrice)
+                    newContainer.appendChild(newRemove)
                     totalPrice += Number(element.price)
                 cartItemsContainer.appendChild(newContainer)
         })
-        document.querySelector(".totalPrice").innerText = "Total price: " +totalPrice+ " Souls"
+        
     }
+    document.querySelector(".totalPrice").innerText = "Total price: " +totalPrice+ " Souls"
 }
 
 function createDetailView(index) {
@@ -90,7 +99,6 @@ function createDetailView(index) {
             newPrice.className = "price"
             newPrice.innerText = "Price: " + jsonFile[index].price + " Souls";
             descriptionBox.appendChild(newPrice)
-
     });
 }
 
