@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Souls Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0edda05788.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./scripts/functions.js"></script>
+    <script src="./scripts/scripts.js"></script>
 </head>
 <body>
+    <div id="shoppingCartModal" class="modal">
+        <div class="modalContent">
+            <div class="modalHeader">
+                <span class="modalCloser" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="cartItemsContainer"></div>
+            <div class="modalFooter">
+                <button id="purchaseButton" onclick="pageReload()">Complete Purchase</button>
+                <span class="totalPrice"></span>
+            </div>
+        </div> 
+    </div>
     <header>
         <span onclick="createProductsGrid()">Dark Souls Shop</span>
+        <div class="cartIconContainer" onclick="openModal()">
+            <i class="fa-solid fa-bag-shopping fa-2xl" class="modaloppener"></i>
+            <span class="cartCounter"></span>
+        </div>
     </header>
     <div id="main">
         
@@ -22,6 +40,7 @@
 
     <script>
         window.onload = createProductsGrid()
-        /* window.onload = createDetailView(0) */
+        window.onload = updateCart()
+        /* window.onload = createCartView() */
     </script>
 

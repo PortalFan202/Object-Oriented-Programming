@@ -18,8 +18,102 @@ body {
     background-position: center;
 
 }
+
+.modal {
+    display: none;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    min-height: 101%;
+    width: 100%;
+    overflow:auto;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    border-left: 1px solid #b8954f;
+    color: white;
+    font-family: "Optimus Princeps Semibold";
+    text-align: center;
+    height: auto;
+    width: 35%;
+    padding: 4vh 4vw;
+}
+
+.modalCloser {
+    float: right;
+    font-size: 4vh;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalCloser:hover {
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.modalHeader {
+    overflow: hidden;
+}
+
+.itemContainer {
+    display: flex;
+    margin:0;
+    flex-direction: row;
+    height: 2vh;
+    width: 80%;
+    padding: 2vh 3vw;
+    background: rgba(0, 0, 0, 0.788);
+    border: 1px solid #b8954f;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 2.3vh;
+    color: white;
+    cursor: pointer;
+}
+
+.itemContainer > img {
+    height: 3vh;
+}
+
+.modalFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.totalPrice {
+    font-size: 2.5vh;
+}
+
+#purchaseButton {
+    float: bottom;
+    height: 12vh;
+    width: 25vw;
+    padding: 2vh 0 2vh 0;
+    background: #725c31;
+    border: 1px solid #584215;
+    font-size: 3.2vh;
+    font-family: "Optimus Princeps Semibold";
+    color: white;
+    cursor: pointer;
+}
+
+#purchaseButton:hover {
+    background: #5c4a26;
+}
         
 header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: black;
     height: 5vh;
     padding: 5vh 5vw;
@@ -31,6 +125,25 @@ header > span {
     font-size: 5vh;
     color: white;
     cursor: pointer;
+}
+
+header > span:hover {
+    opacity: 0.7;
+}
+
+header > .cartIconContainer{
+    color: white;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.3vh;
+}
+
+header > .cartIconContainer:hover{
+    opacity: 0.7;
+}
+
+header > .cartIconContainer > span{
+    font-size: 2.7vh;
 }
 
 footer{
@@ -76,6 +189,11 @@ footer > span, a {
     font-size: 2.3vh;
     color: white;
     cursor: pointer;
+}
+
+#grid > .box:hover{
+    background: black;
+    font-size: 2.5vh;
 }
 
 #grid > .box > img {
@@ -127,6 +245,10 @@ footer > span, a {
     cursor: pointer;
 }
 
+#detail > .imgAndButtonContainer > .detailBtton:hover {
+    background: #5c4a26;
+}
+
 #detail > .descriptionBox {
     display: flex;
     margin:0;
@@ -160,6 +282,10 @@ footer > span, a {
 }
 
 @media screen and (max-width: 900px) {
+
+    .modalContent{
+        width: 60%;
+    }
 
     header{
         height: 3vh;

@@ -1,3 +1,45 @@
+function openModal() {
+    document.querySelector(".modal").style.display = "flex"
+}
+
+function closeModal() {
+    document.querySelector(".modal").style.display = "none"
+}
+
+function outsideClick(e) {
+    if (e.target == document.querySelector(".modal")) {
+        closeModal()
+    }
+}
+
+function updateCart() {
+    document.querySelector(".cartCounter").innerText = shoppingCartArray.length
+    let cartItemsContainer = document.querySelector("#cartItemsContainer")
+    if (shoppingCartArray.length == 0) {
+        cartItemsContainer.innerText = "Shopping cart is empty!"
+        cartItemsContainer.style["font-size"] = "5vh"
+    } else {
+        cartItemsContainer.innerHTML = ''
+        var totalPrice = 0
+        shoppingCartArray.forEach(element => {
+            var newContainer = document.createElement("div")
+                newContainer.className = "itemContainer"
+                    var img = document.createElement("img")
+                    img.src = element.image
+                    var newName = document.createElement("span")
+                    newName.innerText = element.name
+                    var newPrice = document.createElement("span")
+                    newPrice.innerText = element.price + " Souls"
+                    newContainer.appendChild(img)
+                    newContainer.appendChild(newName)
+                    newContainer.appendChild(newPrice)
+                    totalPrice += Number(element.price)
+                cartItemsContainer.appendChild(newContainer)
+        })
+        document.querySelector(".totalPrice").innerText = "Total price: " +totalPrice+ " Souls"
+    }
+}
+
 function createDetailView(index) {
     $.getJSON("./products.json", function(jsonFile) {
 
@@ -24,6 +66,10 @@ function createDetailView(index) {
             var newBtton = document.createElement("button")
             newBtton.className = "detailBtton"
             newBtton.innerText = "Add to cart"
+            newBtton.onclick = function() {
+                shoppingCartArray.push(jsonFile[index])
+                updateCart()
+            }
             imgAndButtonContainer.appendChild(newBtton)
 
         var descriptionBox = document.createElement("div")
@@ -79,4 +125,8 @@ function createProductsGrid() {
             element.onclick = function() {createDetailView(index)}
         });
     });
+}
+
+function pageReload() {
+    window.location.reload()
 }
